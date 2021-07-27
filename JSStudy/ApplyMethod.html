@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <!-- 通过 apply() 方法，您能够编写用于不同对象的方法。 -->
+<script>
+    var person = {
+        fullName: function() {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person1 = {
+        firstName: "Bill",
+        lastName: "Gates",
+    }
+
+    person.fullName.apply(person1);  // 将返回 "Bill Gates"
+
+    // call() 和 apply() 之间的区别
+    // 不同之处是：
+    // call() 方法分别接受参数。
+    // apply() 方法接受数组形式的参数。
+    // 如果要使用数组而不是参数列表，则 apply() 方法非常方便。
+
+    var person = {
+        fullName: function(city, country) {
+            return this.firstName + " " + this.lastName + "," + city + "," + country;
+        }
+    }
+    var person1 = {
+        firstName:"John",
+        lastName: "Doe"
+    }
+    person.fullName.apply(person1, ["Oslo", "Norway"]);
+
+
+    // 由于 JS 中没有对数组求最大值的方法，可以使用 Math.max 应用在数组中的每个元素
+    Math.max.apply(null,[1,2,3,4,5,6,10]);  // null 表示不需要制定应用的对象，我们只需要指定方法应用的参数
+</script>
+
+</body>
+</html>

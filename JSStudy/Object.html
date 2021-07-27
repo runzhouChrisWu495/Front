@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<script>
+    var myobj = {       // 通过使用对象字面量来创建一个对象
+        name:18,
+        get getName(){          // get、set 是JS关键字，用来返回和设置 对象的属性，使用时不用()，比函数简洁
+            return this.name;
+        },
+        compute:function(){
+            return this.name-18;
+        }
+    }
+    myobj.sexy = "男";
+    console.log(myobj)
+
+    var myobj2 = new Object();      // Object 是JS中的内置对象构造器，通过new Object()可以创建一个JS对象，与它相似的有String 、Number 、Boolean 、Array 、RegExp 、Function 、Date 
+    myobj2.name = "abin"
+    myobj2.sexy = "男"
+    console.log(myobj2)
+
+    function Person(first, last, age, eye) {        // 自定义一个对象构造器
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+    }
+
+    var myobj3 = new Person("Bill", "Gates", 62, "blue");
+    console.log(myobj3)
+
+    Person.national = "CN"      // 无法向构造器添加方法、属性，而应该在构造器函数定义的时候添加
+    console.log(myobj3)
+</script>
+
+</body>
+</html> 

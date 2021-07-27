@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+    // JS函数不会定义参数的类型
+    function myFunction(a,b){
+        return a+b;
+    };
+
+    // JS函数不会检查传递的实参的类型
+    var a = myFunction("哈哈",13);
+    console.log(a)
+
+
+    // JS函数不会检查传递的实参的数量:
+    // 1.如果参数数量少于定义，那么未传递的形参则未 undefined
+    var b = myFunction("哈哈");
+    console.log(b)
+
+
+    // 2.如果参数数量多于定义，并不会报错，多传递的实参可以在函数内部用 arguments 内置属性来获得
+    x = findMax(1, 123, 500, 115, 44, 88);
+
+    function findMax() {
+        var i;
+        var max = -Infinity;
+        for (i = 0; i < arguments.length; i++) {
+            if (arguments[i] > max) {
+                max = arguments[i];
+            }
+        }
+        return max;
+    }
+    console.log(x)
+</script>
+</head>
+<body>
+</body>
+</html>

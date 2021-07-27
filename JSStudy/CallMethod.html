@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- 
+    call() 方法是预定义的 JavaScript 方法。
+
+    它可以用来调用所有者对象作为参数的方法。
+
+    通过 call()，您能够使用属于另一个对象的方法。 
+-->
+<script>
+    var person = {
+        fullName: function() {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person1 = {
+        firstName:"Bill",
+        lastName: "Gates",
+    }
+    var person2 = {
+        firstName:"Steve",
+        lastName: "Jobs",
+    }
+    person.fullName.call(person1);  // 将返回 "Bill Gates"，第一个参数表明应用这个方法的对象  
+
+    // call 方法可以接受参数
+    var person = {
+        fullName: function(city, country) {
+            return this.firstName + " " + this.lastName + "," + city + "," + country;
+        }
+    }
+    var person1 = {
+        firstName:"Bill",
+        lastName: "Gates"
+    }
+    person.fullName.call(person1, "Seattle", "USA");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .left_float{
+                float: left;        /* 浮动会脱离父元素，不在标准文档流中，具体位置就是本行中贴近左边或者右边，其他元素保持标准文档流*/
+            }
+
+            .father{
+                background-color: #eee;
+            }
+
+            .clear_foalt{
+                /* clear: left; */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class = "father">
+            <img src="./01.png" class="left_float">     <!-- 如果不清除左浮动，那么图片脱离父元素，会导致文字塌陷-->
+            <p class="clear_float">这是一段文字</p>
+        </div>
+    </body>
+</html>

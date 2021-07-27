@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .relative-postion {
+                position: absolute;     /* absolute 表示位置相对于最近已定位的父元素，如果没有已定位的父元素，就相对于整个<html> */
+                top: 20px;
+                left: 30px;
+            }
+            .father{
+                position: relative;     /* relative 表示位置相对于原本应该在的位置 比如top: 20px; 那么就是相对于原本的位置向下移动20px*/
+                top: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="father">
+            <p>这是一段文字</p>
+            <img src="./01.png" class="relative-postion">
+        </div>
+    </body>
+</html>
